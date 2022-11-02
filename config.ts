@@ -1,4 +1,5 @@
 import * as dotenv from "dotenv";
+dotenv.config();
 
 const alchemyKey = process.env.ALCHEMY_GOERLI_KEY || "";
 
