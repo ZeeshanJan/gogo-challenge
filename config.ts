@@ -1,3 +1,7 @@
+import * as dotenv from "dotenv";
+
+const alchemyKey = process.env.ALCHEMY_GOERLI_KEY || "";
+
 const config = {
   
     MATIC_MUMBAI_URL: "https://rpc-mumbai.maticvigil.com/v1/c47616be21a0b8fd38911415127da912c8d2a799",
@@ -11,7 +15,7 @@ const config = {
   
     ropstenUrl: "https://eth-rinkeby.alchemyapi.io/v2/kptReX_G_sWqY6cFegek-y29-m-bzPyw",
 
-    goerliURL: "https://eth-goerli.g.alchemy.com/v2/zsa2K3A5m2tec35KI-BVo2A7agCqyLMg",
+    goerliURL: "https://eth-goerli.g.alchemy.com/v2/"+alchemyKey,
   };
   
   export default config;
