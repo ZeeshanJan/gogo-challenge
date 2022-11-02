@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 async function main() {
     console.log('Entering into deployment...');
   await deployGogoStakingApp();
-  //await deployDevUSDC();
+  await deployDevUSDC();
 }
 
 export async function deployGogoStakingApp() {

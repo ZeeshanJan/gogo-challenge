@@ -143,7 +143,7 @@ contract GogoStakingApp is Ownable {
         uint256 earnedRewards = calculateCompound(stakerAddress);
 
         /// Fetches the ETH's latest price from Chainlink price oracle
-        //ethPrice = getLatestPrice()/1e8;
+        ethPrice = getLatestPrice()/1e8;
         //console.log("USDT Rewards: ", getLatestPrice() * earnedRewards);
 
         /// Mints devUSDC's equivalent to the price of compound interest
