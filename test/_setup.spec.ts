@@ -55,8 +55,11 @@ import {
       GogoStakingContract = await new GogoStakingApp__factory(owner).deploy();
       DevUSDCContract = await new DevUSDC__factory(owner).deploy();
      
-      //const setDevUSDCTx = await GogoStakingContract.setDevUSDCAddress(DevUSDCContract.address);
-      //await setDevUSDCTx.wait();
+      const setDevUSDCTx = await GogoStakingContract.setDevUSDCAddress(DevUSDCContract.address);
+      await setDevUSDCTx.wait();
+
+      const setGogoStakingAppAsMinterTx = await DevUSDCContract.addMinter(GogoStakingContract.address);
+      await setGogoStakingAppAsMinterTx.wait();
 
     });
   });

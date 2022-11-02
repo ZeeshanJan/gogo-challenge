@@ -32,7 +32,7 @@ export declare namespace GogoLibrary {
   export type GogoStakerStruct = {
     staked: PromiseOrValue<boolean>;
     stakerAddress: PromiseOrValue<string>;
-    amount: PromiseOrValue<BigNumberish>;
+    stakedAmount: PromiseOrValue<BigNumberish>;
     stakedSince: PromiseOrValue<BigNumberish>;
   };
 
@@ -44,14 +44,14 @@ export declare namespace GogoLibrary {
   ] & {
     staked: boolean;
     stakerAddress: string;
-    amount: BigNumber;
+    stakedAmount: BigNumber;
     stakedSince: BigNumber;
   };
 }
 
 export interface GogoStakingAppInterface extends utils.Interface {
   functions: {
-    "calculateDevUSDCRwards(address)": FunctionFragment;
+    "calculateCompound(address)": FunctionFragment;
     "devAddress()": FunctionFragment;
     "getLatestPrice()": FunctionFragment;
     "getStakingInfo(address)": FunctionFragment;
@@ -66,7 +66,7 @@ export interface GogoStakingAppInterface extends utils.Interface {
 
   getFunction(
     nameOrSignatureOrTopic:
-      | "calculateDevUSDCRwards"
+      | "calculateCompound"
       | "devAddress"
       | "getLatestPrice"
       | "getStakingInfo"
@@ -80,7 +80,7 @@ export interface GogoStakingAppInterface extends utils.Interface {
   ): FunctionFragment;
 
   encodeFunctionData(
-    functionFragment: "calculateDevUSDCRwards",
+    functionFragment: "calculateCompound",
     values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
@@ -119,7 +119,7 @@ export interface GogoStakingAppInterface extends utils.Interface {
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "calculateDevUSDCRwards",
+    functionFragment: "calculateCompound",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "devAddress", data: BytesLike): Result;
@@ -197,7 +197,7 @@ export interface GogoStakingApp extends BaseContract {
   removeListener: OnEvent<this>;
 
   functions: {
-    calculateDevUSDCRwards(
+    calculateCompound(
       stakerAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<[BigNumber] & { earnedRewards: BigNumber }>;
@@ -242,7 +242,7 @@ export interface GogoStakingApp extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
-  calculateDevUSDCRwards(
+  calculateCompound(
     stakerAddress: PromiseOrValue<string>,
     overrides?: CallOverrides
   ): Promise<BigNumber>;
@@ -283,7 +283,7 @@ export interface GogoStakingApp extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    calculateDevUSDCRwards(
+    calculateCompound(
       stakerAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
@@ -330,7 +330,7 @@ export interface GogoStakingApp extends BaseContract {
   };
 
   estimateGas: {
-    calculateDevUSDCRwards(
+    calculateCompound(
       stakerAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
@@ -372,7 +372,7 @@ export interface GogoStakingApp extends BaseContract {
   };
 
   populateTransaction: {
-    calculateDevUSDCRwards(
+    calculateCompound(
       stakerAddress: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;

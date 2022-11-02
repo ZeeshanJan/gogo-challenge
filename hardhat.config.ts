@@ -55,6 +55,10 @@ const config: HardhatUserConfig = {
       url: networkConfig.ropstenUrl,
       accounts: [privatekey],
     },
+    goerli: {
+      url: networkConfig.goerliURL,
+      accounts: [privatekey],
+    },
     mumbai: {
       url: networkConfig.MATIC_MUMBAI_URL,
       accounts: [privatekey],
@@ -68,7 +72,7 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: "",
+    apiKey: "1D9QGZXZKRDMPJ4SP6ZAUJ3IUB1JI8XI39", //Goerli
   },
   typechain: {
     outDir: "types",

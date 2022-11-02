@@ -10,6 +10,8 @@ const config = {
     ALCHEMYURL: "https://eth-rinkeby.alchemyapi.io/v2/hKOK2kDWPVZlnUJKMxFTwvMNjAwkkrvX",
   
     ropstenUrl: "https://eth-rinkeby.alchemyapi.io/v2/kptReX_G_sWqY6cFegek-y29-m-bzPyw",
+
+    goerliURL: "https://eth-goerli.g.alchemy.com/v2/zsa2K3A5m2tec35KI-BVo2A7agCqyLMg",
   };
   
   export default config;
